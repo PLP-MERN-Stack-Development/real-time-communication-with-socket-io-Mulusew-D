@@ -1,6 +1,9 @@
 import axios from "axios";
 
+// Always use environment variable
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 export const axiosInstance = axios.create({
-  baseURL: import.meta.env.MODE === "development" ? "https://real-time-chat-app-eeii.onrender.com/api" : "/api",
+  baseURL: BASE_URL,
   withCredentials: true,
 });
