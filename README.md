@@ -1,4 +1,4 @@
-# ✨ Full Stack Realtime Chat App ✨
+# ✨ Realtime Chat App ✨
 
 Highlights:
 
