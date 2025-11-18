@@ -17,8 +17,7 @@ const io = new Server(server, {
     origin: [
       "http://localhost:5173",
       "https://real-time-chat-app-fpk1.onrender.com",
-      "https://real-time-chat-app-two-beta.vercel.app"
-    ],
+          ],
     methods: ["GET", "POST"],
     credentials: true
   }
