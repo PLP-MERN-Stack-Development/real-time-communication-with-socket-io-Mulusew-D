@@ -11,14 +11,11 @@ Highlights:
 - ⭐ At the end Deployment like a pro for FREE!
 - ⏳ And much more!
 
-### Build the app
+## 🚀 Live Demo
 
-```shell
-npm run build
-```
+### 🔹 Frontend (React + Vite)
+👉 [https://real-time-chat-app-fpk1.onrender.com](https://real-time-chat-app-fpk1.onrender.com)
 
-### Start the app
+### 🔹 Backend (Node.js + Socket.IO)
+👉 [https://real-time-chat-app-eeii.onrender.com](https://real-time-chat-app-eeii.onrender.com)
 
-```shell
-npm start
-```
