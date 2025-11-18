@@ -11,45 +11,33 @@ import { app, server } from "./lib/socket.js";
 
 dotenv.config();
 
-// Use environment PORT or default to 5000
 const PORT = process.env.PORT || 5000;
-const __dirname = path.resolve();
 
-// CORS configuration
-// Allow localhost for dev and your frontend Vercel URL for production
+// CORS allowed origins (Add your frontend Render URL)
 app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://real-time-chat-app-two-beta.vercel.app", // your frontend deployed URL
+      "https://real-time-chat-app-fpk1.onrender.com",  // your frontend Render URL
     ],
     credentials: true,
   })
 );
 
-// Middleware
 app.use(express.json());
 app.use(cookieParser());
 
-// ✅ Health check route (Fixes "Cannot GET /")
+// Health check
 app.get("/", (req, res) => {
   res.send("Chat App Backend is running ✔️");
 });
 
-// API Routes
+// API routes
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
-// Serve frontend in production
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+// ❌ Removed frontend serving code
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
-  });
-}
-
-// Start server and connect to DB
 server.listen(PORT, () => {
   console.log(`Server is running on PORT: ${PORT}`);
   connectDB();
